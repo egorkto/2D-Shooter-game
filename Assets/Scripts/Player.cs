@@ -23,21 +23,21 @@ public class Player : MonoBehaviour
     {
         if (derection == moveDerection)
         {
-            rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
+            rigidbody.linearVelocity = new Vector2(0, rigidbody.linearVelocity.y);
         }
     }
 
     public void Jump()
     {
-        if (rigidbody.velocity.y == 0)
+        if (rigidbody.linearVelocity.y == 0)
         {
-            rigidbody.velocity = Vector2.up * jumpForce * Time.deltaTime;
+            rigidbody.linearVelocity = Vector2.up * jumpForce * Time.deltaTime;
         }
     }
 
     public void Movement(float xDerection)
     {
-        rigidbody.velocity = new Vector2((xDerection * speed * Time.deltaTime), rigidbody.velocity.y);
+        rigidbody.linearVelocity = new Vector2((xDerection * speed * Time.deltaTime), rigidbody.linearVelocity.y);
     }
 
     public virtual void GetDamage(float damage)
